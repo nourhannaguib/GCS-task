@@ -1,0 +1,30 @@
+<div class="row">
+  <a [routerLink]="['/instructors/add']">
+    <button type="button" class="btn btn-primary pull-right">Add New Instructor</button>
+  </a>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Department</th>
+      <th>Courses</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let i of instructors">
+      <td>{{i.name}}</td>
+      <td>{{i.phone}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.department}}</td>
+      <td>{{i.courses}}</td>
+      <td><a [routerLink]="['/instructors/edit',i.id]"><fa name="edit"></fa></a></td>
+      <td><a><fa name="trash" (click)="delete(i.id)"></fa></a></td>
+    </tr>
+    
+  </tbody>
+</table>
